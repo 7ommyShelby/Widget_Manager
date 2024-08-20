@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { widgetManager } from '../redux/slice'
 import Widget from './Widget'
@@ -8,7 +7,7 @@ const Dashboard = () => {
 
     const dispatch = useDispatch()
 
-    const [categories, setCategory] = useState(useSelector((state) => state));
+    const categories = useSelector((state) => state);
 
     const addWidget = (id) => {
 
@@ -20,17 +19,14 @@ const Dashboard = () => {
 
         // console.log(categories);
 
-        setCategory((prev) => {
-            const updateddata = prev.map((e) => {
-                if (e.id === id) {
-                    return { ...e, widgets: [...e.widgets, newWidget] }
-                }
-                return e
-            })
-
-            dispatch(widgetManager(updateddata));
-            return updateddata
+        const updateddata = categories.map((e) => {
+            if (e.id === id) {
+                return { ...e, widgets: [...e.widgets, newWidget] }
+            }
+            return e
         })
+
+        dispatch(widgetManager(updateddata));
     }
 
 

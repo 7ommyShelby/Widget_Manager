@@ -54,11 +54,7 @@ export const widgetSlice = createSlice({
     name: 'widgetmanager',
     initialState,
     reducers: {
-        widgetManager: (state, action) => {
-            state = action.payload
-            console.log(action.payload);
-        },
-
+        widgetManager: (state, action) => action.payload
     }
 })
 

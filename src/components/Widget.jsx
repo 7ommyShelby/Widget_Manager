@@ -1,32 +1,26 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { widgetManager } from '../redux/slice'
-import { useState } from 'react'
+
 
 
 const Widget = ({ cid, id, title, description }) => {
 
   const dispatch = useDispatch();
 
-  const [categories, setCategory] = useState(useSelector((state) => state));
+  const categories = useSelector((state) => state);
 
   const removeWidget = (cid, wid) => {
 
-    setCategory((prev) => {
+    const updateddata = categories.map((e) => {
+      if (e.id === cid) {
 
-      const updateddata = prev.map((e) => {
-        if (e.id === cid) {
-          
-          return { ...e, widgets: e.widgets.filter((widget) => widget.id !== wid) }
-        }
-        console.log(e);
-        return e
-        
-      })
-
-      dispatch(widgetManager(updateddata))
-      return updateddata
+        return { ...e, widgets: e.widgets.filter((widget) => widget.id !== wid) }
+      }
+      console.log(e);
+      return e
 
     })
+    dispatch(widgetManager(updateddata))
   }
   // console.log("widget", categories);
 
@@ -42,6 +36,7 @@ const Widget = ({ cid, id, title, description }) => {
         ></div> */}
         <div className="p-6 relative z-10">
           <p className="text-xl font-semibold text-gray-800">{title}</p>
+          {/* <p>{id}</p> */}
           <p className="mt-2 text-wrap text-gray-600">{description}
           </p>
         </div>
