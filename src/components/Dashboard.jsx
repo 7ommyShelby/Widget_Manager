@@ -21,42 +21,40 @@ const Dashboard = () => {
         // console.log(categories);
 
         setCategory((prev) => {
-            const updateddata = prev.categories.map((e) => {
+            const updateddata = prev.map((e) => {
                 if (e.id === id) {
                     return { ...e, widgets: [...e.widgets, newWidget] }
                 }
                 return e
             })
 
-            return { categories: updateddata }
+            dispatch(widgetManager(updateddata));
+            return updateddata
         })
     }
 
-    
-
-    dispatch(widgetManager(categories));
 
     return (
         <>
             <main className='h-screen w-full bg-slate-700'>
 
                 {
-                    categories.categories.map((e, idx) => {
+                    categories?.map((e, index) => {
                         return (
-                            <div key={idx} className=' px-4 py-4 flex flex-col gap-4 bg-slate-400  '>
+                            <div key={index} className=' px-4 py-4 flex flex-col gap-4 bg-slate-400  '>
                                 <h1 className='text-2xl'>{e.name}</h1>
                                 <div className='flex gap-6 py-4 px-4 widgetcollection overflow-x-scroll'>
                                     {
-                                        e.widgets?.map((widget, idx) => {
+                                        e?.widgets?.map((widget, idx) => {
                                             return (
                                                 <>
-                                                    <Widget key={idx} title={widget.name} description={widget.text} />
+                                                    <Widget key={idx} id={widget.id} cid={e.id} title={widget.name} description={widget.text} />
                                                 </>
                                             )
                                         })
                                     }
                                     <div className='w-80 min-w-80 h-40 flex items-center justify-center px-3 rounded-xl shadow-md bg-white border border-gray-200'>
-                                        <button onClick={() => { addWidget(e.id,) }} className="flex items-center gap-3 px-6 py-3 text-white text-xs font-bold uppercase bg-blue-500 rounded-lg shadow-md transition-all duration-600 ease-in-out hover:shadow-lg focus:opacity-85 active:opacity-85">
+                                        <button onClick={() => { addWidget(e.id) }} className="flex items-center gap-3 px-6 py-3 text-white text-xs font-bold uppercase bg-blue-500 rounded-lg shadow-md transition-all duration-600 ease-in-out hover:shadow-lg focus:opacity-85 active:opacity-85">
                                             <svg
                                                 aria-hidden="true"
                                                 stroke="currentColor"
