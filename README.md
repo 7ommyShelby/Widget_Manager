@@ -1,21 +1,51 @@
-# React Application Setup Using Vite
+# Widget Manager
 
-This guide will help you set up a React application using Vite and run it on a local server.
+The Widget Manager is a simple and intuitive application that allows you to create, delete, and manage widgets based on categories. The app also includes a search functionality to quickly find widgets by name or category.
 
-## Prerequisites
+## Features
 
-Before you begin, ensure you have the following installed on your machine:
+- **Create Widgets**: Easily add new widgets to the app, assigning them to specific categories.
+- **Delete Widgets**: Remove widgets from the app, either individually or by category.
+- **Search Functionality**: Quickly search for widgets by name or category, making it easy to find exactly what you're looking for.
+- **Category Management**: Organize widgets into categories for better management and retrieval.
 
-- **Node.js** (v14 or higher)
-- **npm** or **yarn**
+## Getting Started
 
-## Installation
+Follow these instructions to get the Widget Manager up and running on your local machine.
 
-Follow the steps below to create a new React project using Vite:
+### Prerequisites
 
-### 1. Create a New React Project
+Before you begin, make sure you have the following installed:
 
-You can create a new React project using Vite with the following command:
+- **Node.js**: Download and install from [Node.js official website](https://nodejs.org/).
+- **npm** or **yarn**: Node Package Manager (npm) is installed automatically with Node.js. You can install Yarn globally using npm:
+  ```bash
+  npm install -g yarn
 
-```bash
-npm create vite@latest my-react-app --template react
+
+  git clone https://github.com/7ommyShelby/Widget_Manager.git
+
+## Install Dependencies
+
+## Using npm
+npm install
+
+## OR
+
+## Using yarn
+yarn install
+
+# Start the Development Server
+
+### Server should start running on [localhost](http://localhost:5173/)
+
+## Using npm
+npm run dev
+
+### OR
+
+## Using yarn
+yarn start
+
+
+

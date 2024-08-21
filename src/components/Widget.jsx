@@ -40,7 +40,7 @@ const Widget = ({ cid, id, title, description }) => {
           <p className="mt-2 text-wrap text-gray-600">{description}
           </p>
         </div>
-        <button onClick={() => { removeWidget(cid, id) }} className='absolute flex right-0 top-0 px-6 py-2 bg-red-700 text-slate-400 font-extrabold' >X</button>
+        <button onClick={() => { removeWidget(cid, id) }} className='absolute flex right-0 top-0 px-6 py-2 transition-all duration-300 hover:bg-red-700 bg-orange-500 text-slate-100 font-bold' >X</button>
       </div>
 
     </>

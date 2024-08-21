@@ -67,21 +67,20 @@ const Dashboard = () => {
 
     console.log(search);
 
-
     // const [cid, setCid] = useState(categories[0]?.id)
 
 
     return (
         <>
-            <main className=' w-full h-screen bg-slate-700 '>
+            <main className=' w-full h-screen '>
 
-                <header className='px-6 py-2 flex justify-between items-center sticky top-0 z-20 bg-slate-900'>
-                    <h1 className='text-4xl text-gray-500 font-bold uppercase'>Dashboard</h1>
+                <header className='px-6 py-2 flex justify-between items-center sticky top-0 z-20 bg-yellow-700 '>
+                    <h1 className='text-4xl text-gray-100 font-bold uppercase'>Dashboard</h1>
                     <div className='w-[50%] h-[30%] bg-slate-400 rounded-xl relative'>
                         <input onChange={(e) => setSearch(e.target.value)} value={search} placeholder='Search Widgets...' className='w-full outline-none border-none px-4 py-2 rounded-xl' type="input" />
-                        <div className={` flex-col w-full bg-slate-100 rounded-lg ${search !=='' ? 'flex px-4 py-2' : 'none'}`} >
+                        <div className={` flex-col w-full bg-slate-100 rounded-lg ${search !== '' ? 'flex px-4 py-2' : 'none'}`} >
                             {
-                              search && widgetlist.map((e) => {
+                                search && widgetlist.map((e) => {
                                     if (e.startsWith(search)) {
                                         return (
                                             <>
@@ -126,15 +125,15 @@ const Dashboard = () => {
                     </div> */}
                 </header>
 
-                <section className='flex flex-1 w-full h-full relative'>
+                <section className='flex flex-1 w-full h-full bg-neutral-200  relative'>
 
-                    <div className='h-full categorycontainer overflow-y-scroll w-full'>
+                    <div className='h-full flex flex-col gap-1 categorycontainer overflow-y-scroll w-full'>
                         {
                             categories?.map((e, index) => {
                                 return (
-                                    <div key={index} className=' px-4 py-4 flex flex-col gap-4 bg-slate-400  '>
-                                        <h1 className='text-2xl'>{e.name}</h1>
-                                        <div className='flex w-full gap-6 py-4 px-4 widgetcollection overflow-x-scroll'>
+                                    <div key={index} className='border border-slate-600 rounded-xl px-4 py-2 flex flex-col   '>
+                                        <h1 className='text-2xl mb-1 font-medium uppercase -tracking-tighter underline underline-offset-2'>{e.name}</h1>
+                                        <div className='flex w-full gap-4 py-2 px-4 widgetcollection overflow-x-scroll'>
                                             {
                                                 e?.widgets?.map((widget, idx) => {
                                                     return (
@@ -230,12 +229,8 @@ const Dashboard = () => {
                                 )
                             })
                         }</div>
-
-
                 </section>
-
-
-            </main >
+            </main>
         </>
     )
 }
