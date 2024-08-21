@@ -1,3 +1,6 @@
 .widgetcollection::-webkit-scrollbar {
     display: none;
 }
+.categorycontainer::-webkit-scrollbar {
+    display: none;
+}

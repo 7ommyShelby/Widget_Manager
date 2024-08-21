@@ -16,7 +16,7 @@ const Widget = ({ cid, id, title, description }) => {
 
         return { ...e, widgets: e.widgets.filter((widget) => widget.id !== wid) }
       }
-      console.log(e);
+      // console.log(e);
       return e
 
     })

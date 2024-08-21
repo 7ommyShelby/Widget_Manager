@@ -2,13 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
     {
-        "id": "cspm-executive-dashboard",
-        "name": "CSPM Executive Dashboard",
+        "id": "category1",
+        "name": "Category 1",
         "widgets": [
             // {
-            //     "id": "widget1",
-            //     "name": "Widget 1",
-            //     "text": "This is some random text for Widget 1."
+            //     "id": "widget3",
+            //     "name": "Widget 2",
+            //     "flag": true,
+            //     "text": "This is some random text for Widget 3."
             // },
 
         ]
@@ -19,7 +20,8 @@ const initialState = [
         "widgets": [
             // {
             //     "id": "widget3",
-            //     "name": "Widget 3",
+            //     "name": "Widget 2",
+            //     "flag": true,
             //     "text": "This is some random text for Widget 3."
             // },
 
@@ -27,26 +29,31 @@ const initialState = [
     },
     {
         "id": "category3",
-        "name": "Category 2",
+        "name": "Category 3",
         "widgets": [
             // {
             //     "id": "widget3",
-            //     "name": "Widget 3",
+            //     "name": "Widget 2",
+            //     "flag": true,
             //     "text": "This is some random text for Widget 3."
-            // }
+            // },
+
         ]
     },
     {
         "id": "category4",
-        "name": "Category 2",
+        "name": "Category 4",
         "widgets": [
             // {
             //     "id": "widget3",
-            //     "name": "Widget 3",
+            //     "name": "Widget 2",
+            //     "flag": true,
             //     "text": "This is some random text for Widget 3."
-            // }
+            // },
+
         ]
     },
+    
 
 ]
 
